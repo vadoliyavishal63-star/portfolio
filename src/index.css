@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  /* Corporate / Professional Palette */
+  --color-corp-bg: #ffffff;
+  --color-corp-surface: #f8fafc;
+  /* Slate 50 */
+  --color-corp-surface-hover: #f1f5f9;
+  /* Slate 100 */
+
+  --color-corp-primary: #0f172a;
+  /* Slate 900 - Headings */
+  --color-corp-text: #475569;
+  /* Slate 600 - Body */
+  --color-corp-muted: #94a3b8;
+  /* Slate 400 - Muted */
+
+  --color-corp-accent: #4f46e5;
+  /* Indigo 600 - Primary Brand */
+  --color-corp-accent-hover: #4338ca;
+  /* Indigo 700 */
+  --color-corp-accent-light: #e0e7ff;
+  /* Indigo 100 - Soft backgrounds */
+
+  --color-corp-border: #e2e8f0;
+  /* Slate 200 */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-corp-bg text-corp-text antialiased selection:bg-corp-accent selection:text-white transition-colors duration-300;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-corp-primary font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .corp-card {
+    @apply bg-white border border-corp-border rounded-xl shadow-sm transition-all duration-300 overflow-hidden;
+  }
+
+  .corp-hover {
+    @apply hover:shadow-md hover:-translate-y-1 hover:border-corp-accent/30;
+  }
+
+  .text-gradient-corp {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-corp-accent to-blue-600;
+  }
+
+  .corp-btn-primary {
+    @apply px-6 py-3 bg-corp-accent text-white font-medium rounded-lg hover:bg-corp-accent-hover transition-colors shadow-sm hover:shadow-md flex items-center justify-center gap-2;
+  }
+
+  .corp-btn-secondary {
+    @apply px-6 py-3 bg-white border border-corp-border text-corp-primary font-medium rounded-lg hover:bg-corp-surface-hover hover:border-corp-muted transition-colors shadow-sm flex items-center justify-center gap-2;
+  }
+}
+
+/* Clean Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-corp-surface;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 rounded-full border-2 border-corp-surface;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-400;
+}
