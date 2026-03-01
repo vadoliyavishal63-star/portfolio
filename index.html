@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/portfolio/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>vishal_portfolio</title>
+    <title>vishal_portfolio</title> 
+    <script>
+      // 👇 yeh code automatically base URL fix karega
+      window.__PUBLIC_URL__ = import.meta.env.DEV ? "/" : "/portfolio/";
+    </script>
     <script type="module" crossorigin src="/portfolio/assets/index-DVqL-yK2.js"></script>
     <link rel="stylesheet" crossorigin href="/portfolio/assets/index-CxjafsHf.css">
   </head>
